@@ -30,7 +30,7 @@
         nav {
             height: 70px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             /* Space between logo and menu */
             align-items: center;
             background-color: #333546;
@@ -47,6 +47,10 @@
         nav a {
             text-decoration: none;
             color: white;
+        }
+
+        nav .profile {
+            margin-right: 300px;
         }
 
         ul {
@@ -111,7 +115,7 @@
     </style>
 
     <nav>
-        <a href="">My Profile</a>
+        <a class="profile" href="">My Profile</a>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -139,17 +143,25 @@
                 height: 900px;
                 background-color: #333546;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                flex-direction: row;
                 align-items: center;
                 color: white;
             }
 
-            .section1 h1 {
+            .info {
+                margin-bottom: 100px;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .info h1 {
                 font-size: 45px;
             }
 
-            .section1 p {
+            .info p {
                 width: 800px;
                 text-align: center;
                 font-size: 22px;
@@ -259,21 +271,30 @@
 
             @media screen and (max-width: 1200px) {
                 .section1 {
-                    height: 650px;
+                    height: 720px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .section1 h1 {
-                    font-size: 45px;
+                .info {
+                    margin-bottom: 60px;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .info h1 {
+                    font-size: 35px;
                     margin-bottom: 20px;
                 }
 
-                .section1 p {
-                    width: 800px;
+                .info p {
+                    width: 400px;
                     text-align: center;
-                    font-size: 22px;
+                    font-size: 18px;
                 }
 
                 /* From Uiverse.io by gharsh11032000 */
@@ -380,23 +401,33 @@
 
             @media screen and (max-width: 768px) {
                 .section1 {
-                    height: 600px;
+                    height: 660px;
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .section1 h1 {
-                    font-size: 45px;
-                    margin-bottom: 20px;
-                    text-align: center;
+                .info {
+                    margin-bottom: 30px;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                 }
 
-                .section1 p {
-                    width: auto;
-                    text-align: justify;
+                .info h1 {
+                    text-align: center;
+                    width: 300px;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+
+                .info p {
+                    width: 300px;
+                    text-align: center;
                     font-size: 15px;
-                    margin: 20px;
                 }
 
                 /* From Uiverse.io by gharsh11032000 */
@@ -503,27 +534,50 @@
         </style>
 
         <div  class="section1">
-            <h1>Hi, I am Dodge Nicholson</h1>
-            <p>A full-stack developer passionate about building robust,
-                efficient, and scalable systems. Skilled in both front-end
-                and back-end development, with a keen eye for detail and a
-                focus on delivering user-friendly interfaces.
-            </p>
-            <button class="animated-button">
-                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                    </path>
-                </svg>
-                <span class="text"><a href="">About me</a></span>
-                <span class="circle"></span>
-                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                    </path>
-                </svg>
-            </button>
-
+            <div class="info">
+                <h1>Hi, I am Dodge Nicholson</h1>
+                <p>A full-stack developer passionate about building robust,
+                    efficient, and scalable systems. Skilled in both front-end
+                    and back-end development, with a keen eye for detail and a
+                    focus on delivering user-friendly interfaces.
+                </p>
+                <button class="animated-button">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                    <span class="text"><a href="">About me</a></span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="info">
+                <h1>Hi, I am Dodge Nicholson</h1>
+                <p>A full-stack developer passionate about building robust,
+                    efficient, and scalable systems. Skilled in both front-end
+                    and back-end development, with a keen eye for detail and a
+                    focus on delivering user-friendly interfaces.
+                </p>
+                <button class="animated-button">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                    <span class="text"><a href="">About me</a></span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <style>
@@ -2069,7 +2123,7 @@
             }
         </style>
 
-        <div class="section5">
+        <div id="contact" class="section5">
             <h1>Contact Me</h1>
             <div class="form-container">
                 <form class="form">
