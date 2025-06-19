@@ -30,7 +30,7 @@
         nav {
             height: 70px;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             /* Space between logo and menu */
             align-items: center;
             background-color: #333546;
@@ -49,9 +49,6 @@
             color: white;
         }
 
-        nav .profile {
-            margin-right: 300px;
-        }
 
         ul {
             display: flex;
@@ -60,6 +57,7 @@
             gap: 20px;
             /* Adds spacing between items */
         }
+
 
         li {
             list-style: none;
@@ -82,25 +80,46 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav ul {
+        @media (max-width: 398px) {
+            nav {
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                /* Space between logo and menu */
+                align-items: center;
+                background-color: #333546;
+                position: sticky;
+                /* Makes the navigation bar sticky */
+                top: 0;
+                /* Sticks it to the top of the viewport */
+                z-index: 1000;
+                /* Ensures it stays above other elements */
+                padding: 0 20px;
+                color: white;
+            }
+
+            ul {
+                border-top: 1px solid #464646;
                 display: none;
                 /* Hide menu by default */
                 flex-direction: column;
+                justify-content: none;
+                align-items: none;
                 position: absolute;
                 top: 70px;
                 /* Below the navbar */
                 right: 0;
                 background-color: #333546;
                 width: 100%;
-                text-align: center;
                 padding: 20px 0;
                 border-radius: 0 0 5px 5px;
             }
 
             ul.active {
                 display: flex;
-                /* Show menu when active */
+                flex-direction: column;
+                justify-content: flex-start; /* aligns items to the top */
+                align-items: flex-start;     /* aligns items to the left */
             }
 
             .hamburger {
@@ -109,13 +128,25 @@
             }
 
             li {
-                padding: 15px 0;
+                padding: 10px 20px;
             }
         }
     </style>
 
     <nav>
-        <a class="profile" href="">My Profile</a>
+      
+        <div style="display: flex; align-items: center; background-color: #232946; padding: 0px 10px; border-radius: 10%;" >
+            <a href=""></a>
+            <img src="icon.png" style="padding-right: 10px; border-radius: 50%;" alt="Logo" width="50" height="60">
+            <div style=" display: inline; flex-direction: column; align-items: center;">
+                <h4 style="color: white;">Dodge Nicholson</h4>
+                <a class="profile" href="" style="font-size: 12px; padding-top: 5px;">Web Developer</a>
+            </div>
+            </a>
+        </div>
+      
+        
+        
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -131,26 +162,41 @@
     </nav>
 
     <script>
+        // Hamburger menu toggle
         function toggleMenu() {
             const menu = document.querySelector('ul');
             menu.classList.toggle('active');
+            // Save menu state to localStorage
+            localStorage.setItem('menuActive', menu.classList.contains('active'));
         }
+
+        // Restore menu state on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const menu = document.querySelector('ul');
+            const isActive = localStorage.getItem('menuActive') === 'true';
+            if (isActive) {
+                menu.classList.add('active');
+            } else {
+                menu.classList.remove('active');
+            }
+        });
     </script>
 
     <div class="background">
         <style>
             .section1 {
                 height: 900px;
-                background-color: #333546;
+                background-color: #232946;
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
                 align-items: center;
                 color: white;
             }
 
             .info {
                 margin-bottom: 100px;
-                width: 50%;
+                padding: 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -162,14 +208,22 @@
             }
 
             .info p {
-                width: 800px;
-                text-align: center;
-                font-size: 22px;
+                width: 700px;
+                text-align: justify;
+                font-size: 19px;
+                padding-top: 10px;
+            }
+
+            .info img {
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                /* Adds a shadow effect to the image */
             }
 
             /* From Uiverse.io by gharsh11032000 */
             .animated-button {
-                margin-top: 50px;
+                margin-top: 30px;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -279,7 +333,6 @@
 
                 .info {
                     margin-bottom: 60px;
-                    width: 50%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -293,8 +346,8 @@
 
                 .info p {
                     width: 400px;
-                    text-align: center;
-                    font-size: 18px;
+                    text-align: justify;
+                    font-size: 14px;
                 }
 
                 /* From Uiverse.io by gharsh11032000 */
@@ -420,14 +473,22 @@
                 .info h1 {
                     text-align: center;
                     width: 300px;
-                    font-size: 18px;
-                    margin-bottom: 20px;
+                    font-size: 25px;
+                    margin-bottom: 8px;
                 }
 
                 .info p {
                     width: 300px;
-                    text-align: center;
-                    font-size: 15px;
+                    text-align: justify;
+                    font-size: 12px;
+                    padding-top: 0;
+                }
+
+                .info img {
+                    width: 250px;
+                    height: 250px;
+                    border-radius: 50%;
+                    /* Adds a shadow effect to the image */
                 }
 
                 /* From Uiverse.io by gharsh11032000 */
@@ -557,26 +618,7 @@
                 </button>
             </div>
             <div class="info">
-                <h1>Hi, I am Dodge Nicholson</h1>
-                <p>A full-stack developer passionate about building robust,
-                    efficient, and scalable systems. Skilled in both front-end
-                    and back-end development, with a keen eye for detail and a
-                    focus on delivering user-friendly interfaces.
-                </p>
-                <button class="animated-button">
-                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                        </path>
-                    </svg>
-                    <span class="text"><a href="">About me</a></span>
-                    <span class="circle"></span>
-                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                        </path>
-                    </svg>
-                </button>
+                <img src="971.jpg" alt="Dodge Nicholson">
             </div>
         </div>
 
