@@ -33,7 +33,7 @@
             justify-content: space-evenly;
             /* Space between logo and menu */
             align-items: center;
-            background-color: #333546;
+            background-color: #232946;
             position: sticky;
             /* Makes the navigation bar sticky */
             top: 0;
@@ -80,7 +80,7 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 398px) {
+        @media (max-width: 768px) {
             nav {
                 height: 70px;
                 display: flex;
@@ -135,7 +135,7 @@
 
     <nav>
       
-        <div style="display: flex; align-items: center; background-color: #232946; padding: 0px 10px; border-radius: 10%;" >
+        <div style="display: flex; align-items: center; padding: 0px 10px; border-radius: 10%;" >
             <a href=""></a>
             <img src="icon.png" style="padding-right: 10px; border-radius: 50%;" alt="Logo" width="50" height="60">
             <div style=" display: inline; flex-direction: column; align-items: center;">
@@ -196,7 +196,7 @@
 
             .info {
                 margin-bottom: 100px;
-                padding: 10px;
+                padding: 20px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -215,8 +215,8 @@
             }
 
             .info img {
-                width: 400px;
-                height: 400px;
+                width: 300px;
+                height: 300px;
                 border-radius: 50%;
                 /* Adds a shadow effect to the image */
             }
@@ -891,12 +891,12 @@
                 }
 
                 .section2 .par1 {
-                    width: 300px;
+                    width: 250px;
                     border: 2px solid #333;
                     /* Subtle black border */
                     border-radius: 15px;
                     /* Smooth rounded corners */
-                    height: 250px;
+                    height: 280px;
                     margin: 10px;
                     padding: 20px;
                     /* Space inside the card */
@@ -1805,7 +1805,7 @@
             .section4 {
                 height: 900px;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 color: white;
@@ -1826,8 +1826,9 @@
 
             .carousel {
                 position: relative;
-                width: 80%;
+                width: 100%;
                 overflow: hidden;
+                padding: 9px;
             }
 
             .carousel-track-container {
@@ -1851,15 +1852,15 @@
             }
 
             .arrow {
-                position: absolute;
-                top: 50%;
+                
+                
                 transform: translateY(-50%);
                 background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
                 border: 2px solid rgba(255, 255, 255, 0.3); /* Soft border */
                 color: white;
                 font-size: 2rem;
                 cursor: pointer;
-                z-index: 2;
+               
                 padding: 15px;
                 border-radius: 50%;
                 transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
@@ -1885,7 +1886,7 @@
 
             @media screen and (max-width: 1200px) {
                 .section4 {
-                    height: 600px;
+                    height: 700px;
                 }
 
                 .slide img {
@@ -1898,24 +1899,54 @@
                     height: 600px;
                 }
 
+                .arrow {
+                    display: none;
+                }
+
                 .slide img {
                     width: 100%;
                 }
 
                 .arrow.left {
-                    left: 0px;
+                    font-size: 24px;
                 }
 
                 .arrow.right {
-                    right: 0px;
+                    font-size: 24px;
                 }
+
+                .section4 p {
+                    text-align: justify;
+                    place-items: center;
+                    font-size: 12px;
+                }
+
+                .carousel-track-container {
+                    overflow-x: auto;
+                    scroll-snap-type: x mandatory;
+                    width: 100%;
+                    -webkit-overflow-scrolling: touch;
+                }
+                
+                .carousel-track {
+                    scroll-snap-type: x mandatory;
+                }
+
+                .slide {
+                    scroll-snap-align: center;
+                    min-width: 100%;
+                    text-align: center;
+                    margin-right: 30px;
+                }
+                
             }
         </style>
 
         <div class="section4">
+            <button class="arrow left">❮</button>
             <div class="carousel">
                 <h1 style="text-align: center; margin-bottom: 25px;">My Projects</h1>
-                <button class="arrow left">❮</button>
+               
                 <div class="carousel-track-container">
                     <div class="carousel-track">
                         <div class="slide">
@@ -1938,8 +1969,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="arrow right">❯</button>
             </div>
+            <button class="arrow right">❯</button>
         </div>
 
         <script>
@@ -2201,15 +2232,31 @@
             }
 
             .footer-about,
-            .footer-links,
+            .footer-links {
+                flex: 1 1 300px;
+                min-width: 250px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                text-align: left;
+                height: 100%;
+            }
+
             .footer-socials {
                 flex: 1 1 300px;
                 min-width: 250px;
+                border-top: 1px solid #444;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
             }
 
             .footer h2 {
                 font-size: 1.5rem;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
                 border-bottom: 2px solid white;
                 display: inline-block;
                 padding-bottom: 5px;
@@ -2278,7 +2325,20 @@
                 .footer-about,
                 .footer-links,
                 .footer-socials {
-                    flex: 1 1 auto;
+                    flex: 1 1 100%;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    height: auto;
+                }
+
+                .footer-about p {
+                    width: 100% !important;
+                    max-width: 300px;
+                    margin: 0 auto;
                 }
             }
         </style>
@@ -2288,7 +2348,7 @@
                 <!-- About Section -->
                 <div class="footer-about">
                     <h2>About Me</h2>
-                    <p>A passionate developer with a love for creating efficient and impactful systems. Constantly
+                    <p style="text-align: justify; width: 400px;">A passionate developer with a love for creating efficient and impactful systems. Constantly
                         learning and growing in the evolving world of technology.</p>
                 </div>
 
@@ -2296,7 +2356,8 @@
                 <div class="footer-links">
                     <h2>Quick Links</h2>
                     <ul>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -2305,7 +2366,7 @@
 
                 <!-- Social Media -->
                 <div class="footer-socials">
-                    <h2>Follow Me</h2>
+                    <h2 style="margin-top: 15px;">Follow Me</h2>
                     <div class="social-icons">
                         <a href="#" class="social-icon">🌐</a>
                         <a href="#" class="social-icon">🐦</a>
