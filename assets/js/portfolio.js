@@ -26,7 +26,7 @@ const portfolioDetails = {
         title: 'Serviamus Website',
         category: 'Web Development',
         description: 'Modern website development for Serviamus Foundation, focusing on enhancing user experience, optimizing performance, and implementing responsive design solutions.',
-        technologies: ['HTML5', 'JavaScript', 'Tailwind CSS', 'PHP'],
+        technologies: ['HTML5', 'JavaScript', 'Tailwind CSS', 'PHP', 'MySQL'],
         features: ['Responsive Design', 'Modern UI/UX', 'Performance Optimized', 'Cross-browser Compatible']
     },
     'thesis-project': {
