@@ -2,2382 +2,1054 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
 
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', 'Roboto', sans-serif;
-        }
 
-        .background {
-            background-image: url(omg.jpg);
-            background-size: cover;
-            /* Makes the image cover the entire container */
-            background-position: center;
-            /* Ensures the image is centered */
-            background-attachment: fixed;
-            /* Makes the background sticky */
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+  <!--
+    - #MAIN
+  -->
 
-        nav {
-            height: 70px;
-            display: flex;
-            justify-content: space-evenly;
-            /* Space between logo and menu */
-            align-items: center;
-            background-color: #232946;
-            position: sticky;
-            /* Makes the navigation bar sticky */
-            top: 0;
-            /* Sticks it to the top of the viewport */
-            z-index: 1000;
-            /* Ensures it stays above other elements */
-            padding: 0 20px;
-            color: white;
-            border-bottom: 1px solid #464646;
-        }
+  <main>
 
-        nav a {
-            text-decoration: none;
-            color: white;
-        }
+    <!--
+      - #SIDEBAR
+    -->
 
+    <aside class="sidebar" data-sidebar>
 
-        ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            /* Adds spacing between items */
-        }
+      <div class="sidebar-info">
 
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar-2.png" alt="Richard hanrick" width="80">
+        </figure>
 
-        li {
-            list-style: none;
-            display: flex;
-        }
+        <div class="info-content">
+          <h1 class="name" title="Richard hanrick">Dodge Nicholson</h1>
 
-        li img {
-            width: 20px;
-            height: 20px;
-            margin-right: 2px;
-            background-color: white;
-            border-radius: 10%;
-            margin-right: 5px;
-        }
+          <p class="title">Web developer</p>
+        </div>
 
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            /* Hidden by default */
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            border-radius: 2px;
-        }
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav {
-                height: 70px;
-                display: flex;
-                justify-content: space-between;
-                /* Space between logo and menu */
-                align-items: center;
-                background-color: #333546;
-                position: sticky;
-                /* Makes the navigation bar sticky */
-                top: 0;
-                /* Sticks it to the top of the viewport */
-                z-index: 1000;
-                /* Ensures it stays above other elements */
-                padding: 0 20px;
-                color: white;
-            }
+      </div>
 
-            ul {
-                border-top: 1px solid #464646;
-                display: none;
-                /* Hide menu by default */
-                flex-direction: column;
-                justify-content: none;
-                align-items: none;
-                position: absolute;
-                top: 70px;
-                /* Below the navbar */
-                right: 0;
-                background-color: #333546;
-                width: 100%;
-                padding: 20px 0;
-                border-radius: 0 0 5px 5px;
-            }
+      <div class="sidebar-info_more">
 
-            ul.active {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start; /* aligns items to the top */
-                align-items: flex-start;     /* aligns items to the left */
-            }
+        <div class="separator"></div>
 
-            .hamburger {
-                display: flex;
-                /* Show hamburger menu icon */
-            }
+        <ul class="contacts-list">
 
-            li {
-                padding: 10px 20px;
-            }
-        }
-    </style>
+          <li class="contact-item">
 
-    <nav>
-      
-        <div style="display: flex; align-items: center; padding: 0px 10px; border-radius: 10%;" >
-            <a href=""></a>
-            <img src="icon.png" style="padding-right: 10px; border-radius: 50%;" alt="Logo" width="50" height="60">
-            <div style=" display: inline; flex-direction: column; align-items: center;">
-                <h4 style="color: white;">Dodge Nicholson</h4>
-                <a class="profile" href="" style="font-size: 12px; padding-top: 5px;">Web Developer</a>
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
-            </a>
-        </div>
-      
-        
-        
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul>
-            <li><img src="home.png" alt=""> <a href="#">Home</a></li>
-            <li><img src="about.png" alt=""> <a href="#about">About Me</a></li>
-            <li><img src="contact.webp" alt=""> <a href="#contact">Contact</a></li>
-            <li><img src="project.webp" alt=""> <a href="#project">Projects</a></li>
-            <li><img src="skills.webp" alt=""> <a href="#skills">Skills</a></li>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link">dodgesuico.dev@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link">+63 976 624 7731</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">July 1, 2003</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Maranding, Lala, Lanao del Norte</address>
+            </div>
+
+          </li>
+
         </ul>
-    </nav>
 
-    <script>
-        // Hamburger menu toggle
-        function toggleMenu() {
-            const menu = document.querySelector('ul');
-            menu.classList.toggle('active');
-            // Save menu state to localStorage
-            localStorage.setItem('menuActive', menu.classList.contains('active'));
-        }
+        <div class="separator"></div>
 
-        // Restore menu state on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            const menu = document.querySelector('ul');
-            const isActive = localStorage.getItem('menuActive') === 'true';
-            if (isActive) {
-                menu.classList.add('active');
-            } else {
-                menu.classList.remove('active');
-            }
-        });
-    </script>
+        <ul class="social-list">
 
-    <div class="background">
-        <style>
-            .section1 {
-                height: 900px;
-                background-color: #232946;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
 
-            .info {
-                margin-bottom: 100px;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
 
-            .info h1 {
-                font-size: 45px;
-            }
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
 
-            .info p {
-                width: 700px;
-                text-align: justify;
-                font-size: 19px;
-                padding-top: 10px;
-            }
+        </ul>
 
-            .info img {
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                /* Adds a shadow effect to the image */
-            }
+      </div>
 
-            /* From Uiverse.io by gharsh11032000 */
-            .animated-button {
-                margin-top: 30px;
-                position: relative;
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                padding: 16px 36px;
-                border: 4px solid;
-                border-color: transparent;
-                font-size: 16px;
-                background-color: inherit;
-                border-radius: 100px;
-                font-weight: 600;
-                color: greenyellow;
-                box-shadow: 0 0 0 2px greenyellow;
-                cursor: pointer;
-                overflow: hidden;
-                transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            }
-
-            .animated-button a {
-                color: white;
-                text-decoration: none;
-            }
-
-            .animated-button a:hover {
-                box-shadow: 0 0 0 12px transparent;
-                color: #212121;
-                border-radius: 12px;
-            }
-
-            .animated-button svg {
-                position: absolute;
-                width: 24px;
-                fill: greenyellow;
-                z-index: 9;
-                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            }
-
-            .animated-button .arr-1 {
-                right: 16px;
-            }
-
-            .animated-button .arr-2 {
-                left: -25%;
-            }
-
-            .animated-button .circle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 20px;
-                height: 20px;
-                background-color: greenyellow;
-                border-radius: 50%;
-                opacity: 0;
-                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            }
-
-            .animated-button .text {
-                position: relative;
-                z-index: 1;
-                transform: translateX(-12px);
-                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            }
-
-            .animated-button:hover {
-                box-shadow: 0 0 0 12px transparent;
-                color: #212121;
-                border-radius: 12px;
-            }
-
-            .animated-button:hover .arr-1 {
-                right: -25%;
-            }
-
-            .animated-button:hover .arr-2 {
-                left: 16px;
-            }
-
-            .animated-button:hover .text {
-                transform: translateX(12px);
-            }
-
-            .animated-button:hover svg {
-                fill: #212121;
-            }
-
-            .animated-button:active {
-                scale: 0.95;
-                box-shadow: 0 0 0 4px greenyellow;
-            }
-
-            .animated-button:hover .circle {
-                width: 220px;
-                height: 220px;
-                opacity: 1;
-            }
+    </aside>
 
 
-            @media screen and (max-width: 1200px) {
-                .section1 {
-                    height: 720px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
 
-                .info {
-                    margin-bottom: 60px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
 
-                .info h1 {
-                    font-size: 35px;
-                    margin-bottom: 20px;
-                }
 
-                .info p {
-                    width: 400px;
-                    text-align: justify;
-                    font-size: 14px;
-                }
+    <!--
+      - #main-content
+    -->
 
-                /* From Uiverse.io by gharsh11032000 */
-                .animated-button {
-                    margin-top: 50px;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    gap: 4px;
-                    padding: 16px 36px;
-                    border: 4px solid;
-                    border-color: transparent;
-                    font-size: 16px;
-                    background-color: inherit;
-                    border-radius: 100px;
-                    font-weight: 600;
-                    color: greenyellow;
-                    box-shadow: 0 0 0 2px greenyellow;
-                    cursor: pointer;
-                    overflow: hidden;
-                    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+    <div class="main-content">
 
-                .animated-button a {
-                    color: white;
-                    text-decoration: none;
-                }
+      <!--
+        - #NAVBAR
+      -->
 
-                .animated-button a:hover {
-                    box-shadow: 0 0 0 12px transparent;
-                    color: #212121;
-                    border-radius: 12px;
-                }
+      <nav class="navbar">
 
-                .animated-button svg {
-                    position: absolute;
-                    width: 24px;
-                    fill: greenyellow;
-                    z-index: 9;
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+        <ul class="navbar-list">
 
-                .animated-button .arr-1 {
-                    right: 16px;
-                }
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
 
-                .animated-button .arr-2 {
-                    left: -25%;
-                }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
 
-                .animated-button .circle {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 20px;
-                    height: 20px;
-                    background-color: greenyellow;
-                    border-radius: 50%;
-                    opacity: 0;
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
 
-                .animated-button .text {
-                    position: relative;
-                    z-index: 1;
-                    transform: translateX(-12px);
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certificates</button>
+          </li>
 
-                .animated-button:hover {
-                    box-shadow: 0 0 0 12px transparent;
-                    color: #212121;
-                    border-radius: 12px;
-                }
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
 
-                .animated-button:hover .arr-1 {
-                    right: -25%;
-                }
+        </ul>
 
-                .animated-button:hover .arr-2 {
-                    left: 16px;
-                }
+      </nav>
 
-                .animated-button:hover .text {
-                    transform: translateX(12px);
-                }
 
-                .animated-button:hover svg {
-                    fill: #212121;
-                }
 
-                .animated-button:active {
-                    scale: 0.95;
-                    box-shadow: 0 0 0 4px greenyellow;
-                }
 
-                .animated-button:hover .circle {
-                    width: 220px;
-                    height: 220px;
-                    opacity: 1;
-                }
-            }
 
-            @media screen and (max-width: 768px) {
-                .section1 {
-                    height: 660px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
+      <!--
+        - #ABOUT
+      -->
 
-                .info {
-                    margin-bottom: 30px;
-                    width: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
+      <article class="about  active" data-page="about">
 
-                .info h1 {
-                    text-align: center;
-                    width: 300px;
-                    font-size: 25px;
-                    margin-bottom: 8px;
-                }
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
 
-                .info p {
-                    width: 300px;
-                    text-align: justify;
-                    font-size: 12px;
-                    padding-top: 0;
-                }
+        <section class="about-text">
+          <p>
+            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and
+            print media.
+            I enjoy
+            turning complex problems into simple, beautiful and intuitive designs.
+          </p>
 
-                .info img {
-                    width: 250px;
-                    height: 250px;
-                    border-radius: 50%;
-                    /* Adds a shadow effect to the image */
-                }
+          <p>
+            My job is to build your website so that it is functional and user-friendly but at the same time
+            attractive.
+            Moreover, I
+            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is
+            to bring
+            across your
+            message and identity in the most creative way. I created web design for many famous brand
+            companies.
+          </p>
+        </section>
 
-                /* From Uiverse.io by gharsh11032000 */
-                .animated-button {
-                    margin-top: 20px;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    gap: 4px;
-                    padding: 16px 36px;
-                    border: 4px solid;
-                    border-color: transparent;
-                    font-size: 16px;
-                    background-color: inherit;
-                    border-radius: 100px;
-                    font-weight: 600;
-                    color: greenyellow;
-                    box-shadow: 0 0 0 2px greenyellow;
-                    cursor: pointer;
-                    overflow: hidden;
-                    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-                }
 
-                .animated-button a {
-                    color: white;
-                    text-decoration: none;
-                }
+        <!--
+          - service
+        -->
 
-                .animated-button a:hover {
-                    box-shadow: 0 0 0 12px transparent;
-                    color: #212121;
-                    border-radius: 12px;
-                }
+        <section class="service">
 
-                .animated-button svg {
-                    position: absolute;
-                    width: 24px;
-                    fill: greenyellow;
-                    z-index: 9;
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+          <h3 class="h3 service-title">What i'm doing</h3>
 
-                .animated-button .arr-1 {
-                    right: 16px;
-                }
+          <ul class="service-list">
 
-                .animated-button .arr-2 {
-                    left: -25%;
-                }
+            <li class="service-item">
 
-                .animated-button .circle {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 20px;
-                    height: 20px;
-                    background-color: greenyellow;
-                    border-radius: 50%;
-                    opacity: 0;
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
 
-                .animated-button .text {
-                    position: relative;
-                    z-index: 1;
-                    transform: translateX(-12px);
-                    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-                }
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
 
-                .animated-button:hover {
-                    box-shadow: 0 0 0 12px transparent;
-                    color: #212121;
-                    border-radius: 12px;
-                }
-
-                .animated-button:hover .arr-1 {
-                    right: -25%;
-                }
-
-                .animated-button:hover .arr-2 {
-                    left: 16px;
-                }
-
-                .animated-button:hover .text {
-                    transform: translateX(12px);
-                }
-
-                .animated-button:hover svg {
-                    fill: #212121;
-                }
-
-                .animated-button:active {
-                    scale: 0.95;
-                    box-shadow: 0 0 0 4px greenyellow;
-                }
-
-                .animated-button:hover .circle {
-                    width: 220px;
-                    height: 220px;
-                    opacity: 1;
-                }
-            }
-        </style>
-
-        <div  class="section1">
-            <div class="info">
-                <h1>Hi, I am Dodge Nicholson</h1>
-                <p>A full-stack developer passionate about building robust,
-                    efficient, and scalable systems. Skilled in both front-end
-                    and back-end development, with a keen eye for detail and a
-                    focus on delivering user-friendly interfaces.
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
                 </p>
-                <button class="animated-button">
-                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                        </path>
-                    </svg>
-                    <span class="text"><a href="">About me</a></span>
-                    <span class="circle"></span>
-                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <div class="info">
-                <img src="971.jpg" alt="Dodge Nicholson">
-            </div>
-        </div>
+              </div>
 
-        <style>
-            .section2 {
-                height: 900px;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
+            </li>
 
-                align-items: center;
-                color: white;
-            }
+            <li class="service-item">
 
-            .section2 h1 {
-                margin-bottom: 20px;
-                font-size: 45px;
-            }
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
 
-            .section2 .par {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
 
-            }
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
 
-            .section2 .par1 {
-                width: 300px;
-                border: 2px solid #333;
-                /* Subtle black border */
-                border-radius: 15px;
-                /* Smooth rounded corners */
-                height: 250px;
-                margin: 10px;
-                padding: 20px;
-                /* Space inside the card */
+            </li>
 
-                background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                /* Black gradient */
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                    -5px -5px 15px rgba(50, 50, 50, 0.3);
-                /* Neomorphic shadow effect */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                /* Smooth hover effect */
+            <li class="service-item">
 
-            }
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
 
-            .section2 .par1:hover {
-                transform: scale(1.05);
-                /* Slight zoom effect */
-                box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                    -8px -8px 20px rgba(70, 70, 70, 0.5);
-                /* Enhanced shadow on hover */
-            }
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Bot Development</h4>
 
-            .section2 .par1 h2 {
-                font-size: 1.3rem;
-                font-weight: bold;
-                color: #fff;
-                /* White text for contrast */
-                padding-bottom: 10px;
-            }
+                <p class="service-item-text">
+                  Professional development of discord bots.
+                </p>
+              </div>
 
-            .section2 .par1 p {
-                font-size: 1rem;
-                color: #ccc;
-                /* Softer white text */
-                line-height: 1.5;
-                padding-bottom: 5px;
-            }
+            </li>
 
+          </ul>
 
-            .section2 .par2 {
-                display: flex;
-                flex-direction: column;
-                text-align: justify;
+        </section>
 
-                width: 200px;
-                border: 2px solid #333;
-                /* Subtle black border */
-                border-radius: 15px;
-                /* Smooth rounded corners */
-                height: 250px;
-              
-                padding: 20px;
-                /* Space inside the card */
 
-                background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                /* Black gradient */
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                    -5px -5px 15px rgba(50, 50, 50, 0.3);
-                /* Neomorphic shadow effect */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                /* Smooth hover effect */
-            }
+        <!--
+          - testimonials
+        -->
 
-            .section2 .par2:hover {
-                transform: scale(1.05);
-                /* Slight zoom effect */
-                box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                    -8px -8px 20px rgba(70, 70, 70, 0.5);
-                /* Enhanced shadow on hover */
-            }
+        <!-- <section class="testimonials">
 
-            .section2 .par2 h2 {
-                font-size: 1.3rem;
-                font-weight: bold;
-                color: #fff;
-                /* White text for contrast */
-                margin-bottom: 10px;
-                text-align: center;
-            }
+          <h3 class="h3 testimonials-title">Testimonials</h3>
 
-            .section2 .par2 p {
-                font-size: 1rem;
-                color: #ccc;
-                /* Softer white text */
-                line-height: 1.5;
-                padding: 0 10px;
-                /* Adjust for better readability */
-            }
+          <ul class="testimonials-list has-scrollbar">
 
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
 
-            @media (max-width: 1200px) {
-                .section2 {
-                    height: 600px;
-                    display: flex;
-                    flex-direction: column;
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
 
-                    align-items: center;
-                    color: white;
-                }
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
 
-                .section2 h1 {
-                    margin-bottom: 20px;
-                    font-size: 45px;
-
-                }
-
-                .section2 .par {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                }
-
-                .section2 .par1 {
-                    width: 300px;
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    height: 250px;
-                    margin: 10px;
-                    padding: 20px;
-                    /* Space inside the card */
-
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-
-                }
-
-                .section2 .par1:hover {
-                    transform: scale(1.05);
-                    /* Slight zoom effect */
-                    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                        -8px -8px 20px rgba(70, 70, 70, 0.5);
-                    /* Enhanced shadow on hover */
-                }
-
-                .section2 .par1 h2 {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: #fff;
-                    /* White text for contrast */
-                    padding-bottom: 10px;
-                }
-
-                .section2 .par1 p {
-                    font-size: 1rem;
-                    color: #ccc;
-                    /* Softer white text */
-                    line-height: 1.5;
-                    padding-bottom: 5px;
-                }
-
-                .section2 .par2 {
-                    display: flex;
-                    flex-direction: column;
-                    text-align: justify;
-
-                    width: 200px;
-
-                    height: 250px;
-                    margin: 10px;
-                    padding: 20px;
-                    /* Space inside the card */
-
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-                }
-
-                .section2 .par2:hover {
-                    transform: scale(1.05);
-                    /* Slight zoom effect */
-                    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                        -8px -8px 20px rgba(70, 70, 70, 0.5);
-                    /* Enhanced shadow on hover */
-                }
-
-                .section2 .par2 h2 {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: #fff;
-                    /* White text for contrast */
-                    margin-bottom: 10px;
-                    text-align: center;
-                }
-
-                .section2 .par2 p {
-                    font-size: 1rem;
-                    color: #ccc;
-                    /* Softer white text */
-                    line-height: 1.5;
-                    padding: 0 10px;
-                    /* Adjust for better readability */
-                }
-            }
-
-            @media screen and (max-width: 760px) {
-                .section2 {
-                    height: 1500px;
-                    display: flex;
-                    flex-direction: column;
-
-                    align-items: center;
-                    color: white;
-                }
-
-                .section2 h1 {
-                    margin-bottom: 20px;
-                    font-size: 45px;
-
-                }
-
-                .section2 .par {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-
-                }
-
-                .section2 .par1 {
-                    width: 250px;
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    height: 280px;
-                    margin: 10px;
-                    padding: 20px;
-                    /* Space inside the card */
-
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-
-                }
-
-                .section2 .par1:hover {
-                    transform: scale(1.05);
-                    /* Slight zoom effect */
-                    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                        -8px -8px 20px rgba(70, 70, 70, 0.5);
-                    /* Enhanced shadow on hover */
-                }
-
-                .section2 .par1 h2 {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: #fff;
-                    /* White text for contrast */
-                    padding-bottom: 10px;
-                }
-
-                .section2 .par1 p {
-                    font-size: 1rem;
-                    color: #ccc;
-                    /* Softer white text */
-                    line-height: 1.5;
-                    padding-bottom: 5px;
-                }
-
-                .section2 .par2 {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: justify;
-
-                    width: 200px;
-
-                    height: 250px;
-                    margin: 10px;
-                    padding: 20px;
-                    /* Space inside the card */
-
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-                }
-
-                .section2 .par2:hover {
-                    transform: scale(1.05);
-                    /* Slight zoom effect */
-                    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9),
-                        -8px -8px 20px rgba(70, 70, 70, 0.5);
-                    /* Enhanced shadow on hover */
-                }
-
-                .section2 .par2 h2 {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: #fff;
-                    /* White text for contrast */
-                    margin-bottom: 10px;
-                    text-align: center;
-                }
-
-                .section2 .par2 p {
-                    font-size: 1rem;
-                    color: #ccc;
-                    /* Softer white text */
-                    line-height: 1.5;
-                    padding: 0 10px;
-                    /* Adjust for better readability */
-                }
-            }
-        </style>
-
-        <style>
-            .socials-section {
-                text-align: center;
-                font-family: 'Roboto', sans-serif;
-                margin-top: 20px;
-            }
-
-            .socials-section p {
-                font-size: 1.2rem;
-                color: #fff;
-                margin-bottom: 15px;
-                font-weight: bold;
-            }
-
-            .socials-list {
-                list-style: none;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .socials-list li {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                /* Black gradient */
-                border-radius: 8px;
-                padding: 10px 15px;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7),
-                    -3px -3px 10px rgba(50, 50, 50, 0.3);
-                /* Neomorphic effect */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .socials-list li:hover {
-                transform: scale(1.1);
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9),
-                    -5px -5px 15px rgba(70, 70, 70, 0.5);
-                /* Enhanced hover shadow */
-            }
-
-            .socials-list li span {
-                font-size: 1.5rem;
-                /* Emoji size */
-            }
-
-            .socials-list a {
-                text-decoration: none;
-                font-size: 1rem;
-                color: #ccc;
-                /* Softer white for text */
-                transition: color 0.3s ease;
-            }
-
-            .socials-list a:hover {
-                color: #fff;
-                /* Brighten on hover */
-            }
-
-            @media screen and (max-width: 760px) {
-                .socials-section {
-                    height: auto;
-                    text-align: center;
-                    font-family: 'Roboto', sans-serif;
-                    margin-top: 20px;
-                }
-
-                .socials-section p {
-                    font-size: 1.2rem;
-                    color: #fff;
-                    margin-bottom: 15px;
-                    font-weight: bold;
-                }
-
-                .socials-list {
-                    list-style: none;
-                    padding: 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: 15px;
-                }
-
-                .socials-list li {
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    border-radius: 8px;
-                    padding: 10px 15px;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7),
-                        -3px -3px 10px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-
-                .socials-list li:hover {
-                    transform: scale(1.1);
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9),
-                        -5px -5px 15px rgba(70, 70, 70, 0.5);
-                    /* Enhanced hover shadow */
-                }
-
-                .socials-list li span {
-                    font-size: 1.5rem;
-                    /* Emoji size */
-                }
-
-                .socials-list a {
-                    text-decoration: none;
-                    font-size: 1rem;
-                    color: #ccc;
-                    /* Softer white for text */
-                    transition: color 0.3s ease;
-                }
-
-                .socials-list a:hover {
-                    color: #fff;
-                    /* Brighten on hover */
-                }
-            }
-        </style>
-
-        <div id="about" class="section2">
-            <h1>About Me</h1>
-            <div class="par">
-                <div class="par1">
-                    <h2>Name: Dodge Nicholson</h2>
-                    <p>--------------------------------------------------</p>
-                    <p>Age: 20</p>
-                    <p>Contact No: 09555++</p>
-                    <p>Email: dodge@gmail.com</p>
-                    <p>--------------------------------------------------</p>
-                    <p>"with 6 years of programming experience"</p>
-                    <p>"with 20 years of computer experience"</p>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
                 </div>
 
-                <div class="par2">
-                    <h2>Computer Enthusiast</h2>
-                    <p>
-                        For over 20 years, I've delved into every
-                        aspect of computers. From hardware to
-                        software, I’ve mastered how they work
-                        and continually explore new ways to leverage
-                        their potential.
-                    </p>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
                 </div>
 
-                <div class="par2">
-                    <h2>Fast Learner</h2>
-                    <p>In the ever-evolving world of technology,
-                        I thrive on adapting and learning. Staying
-                        ahead of trends and understanding new tools
-                        is what drives my growth as a tech expert.
-                    </p>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
                 </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section> -->
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
             </div>
 
-            
-            <div class="socials-section">
-                <p>My Socials</p>
-                <div class="socials-list">
-                    <li><span>📘</span> <a href="https://facebook.com" target="_blank">Facebook</a></li>
-                    <li><span>🐦</span> <a href="https://twitter.com" target="_blank">Twitter</a></li>
-                    <li><span>📸</span> <a href="https://instagram.com" target="_blank">Instagram</a></li>
-                    <li><span>💼</span> <a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                    <li><span>🎥</span> <a href="https://youtube.com" target="_blank">YouTube</a></li>
-                </div>
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work
+                  done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet,
+                  ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
             </div>
+
+          </section>
 
         </div>
 
-        <style>
-            .breaker {
-                height: 1px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #333546;
-                color: white;
-            }
 
-            .breaker h4 {
-                margin-right: 10px;
-            }
+        <!--
+          - clients
+        -->
 
-            .button.x {
-                max-width: 320px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0.5rem 1.4rem;
-                font-size: 0.675rem;
+        <!-- <section class="clients">
 
-                font-weight: 700;
-                text-align: center;
-                text-transform: uppercase;
-                vertical-align: middle;
-                align-items: center;
-                border-radius: 0.5rem;
-                border: 1px solid rgba(86, 98, 246, 0.25);
-                gap: 0.75rem;
-                color: #ffffff;
-                background-color: #5662f6;
-                cursor: pointer;
-                transition: all 0.6s ease;
-                text-decoration: none;
-            }
+          <h3 class="h3 clients-title">Clients</h3>
 
-            .button.x a {
-                color: white;
-                text-decoration: none;
-            }
+          <ul class="clients-list has-scrollbar">
 
-            .button.x svg {
-                height: 20px;
-                width: 20px;
-                fill: #fff;
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
 
-            }
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
 
-            .button.x:hover {
-                transform: scale(1.02);
-                background-color: rgb(119, 133, 204);
-                box-shadow: 0 2px 4px rgba(119, 133, 204, 0.1);
-            }
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
 
-            .button.x:focus {
-                outline: none;
-                box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
-            }
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
 
-            .button.x:active {
-                transform: scale(0.98);
-                opacity: 0.8;
-            }
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
 
-            @media (max-width: 480px) {
-                .button.x {
-                    max-width: 100%;
-                }
-            }
-        </style>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
 
-        <div class="breaker">
-          
-        </div>
+          </ul>
 
+        </section> -->
 
-        <style>
-            .section3 {
-                height: 900px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
+      </article>
 
-            .section3 h2 {
-                margin-bottom: 30px;
-            }
 
-            .section3 .con {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                text-align: justify;
 
-                width: 800px;
 
-                border: 2px solid #333;
-                /* Subtle black border */
-                border-radius: 15px;
-                /* Smooth rounded corners */
-                background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                /* Black gradient */
-                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                    -5px -5px 15px rgba(50, 50, 50, 0.3);
-                /* Neomorphic shadow effect */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                /* Smooth hover effect */
-            }
 
-            .section3 .content {
-                padding: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+      <!--
+        - #RESUME
+      -->
 
-            .section3 h3 {
-                margin-bottom: 20px;
-                text-align: center;
-            }
+      <article class="resume" data-page="resume">
 
-            .section3 p {
-                margin-bottom: 40px;
-                width: 300px;
-            }
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
 
-            .section3 .skills {
-                padding: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+        <section class="timeline">
 
-            .skill {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                margin-bottom: 15px;
-                max-width: 500px;
-                text-align: left;
-                background-color: #2c2c2c;
-                padding: 15px;
-                border-radius: 10px;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7),
-                    -3px -3px 10px rgba(50, 50, 50, 0.3);
-                /* Neomorphic effect */
-            }
-
-            .progress-bar {
-                background-color: #444;
-                border-radius: 10px;
-                height: 15px;
-                width: 100%;
-                overflow: hidden;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-
-            .progress {
-                height: 100%;
-                background-color: #4caf50;
-                /* Green color for progress */
-                border-radius: 10px;
-                transition: width 0.5s ease;
-            }
-
-            .percentage {
-                font-size: 1rem;
-                color: #ccc;
-                display: inline-block;
-            }
-
-            /* From Uiverse.io by vinodjangid07 */
-            .explore {
-                width: 110px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 10px;
-                background-color: rgb(161, 255, 20);
-                border-radius: 30px;
-                color: rgb(19, 19, 19);
-                font-weight: 600;
-                border: none;
-                position: relative;
-                cursor: pointer;
-                transition-duration: .2s;
-                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
-                padding-left: 8px;
-                transition-duration: .5s;
-            }
-
-            .svgIcon {
-                height: 25px;
-                transition-duration: 1.5s;
-            }
-
-            .bell path {
-                fill: rgb(19, 19, 19);
-            }
-
-
-            .explore:hover {
-                background-color: rgb(192, 255, 20);
-                transition-duration: .5s;
-            }
-
-            .explore:active {
-                transform: scale(0.97);
-                transition-duration: .2s;
-            }
-
-            .explore:hover .svgIcon {
-                transform: rotate(250deg);
-                transition-duration: 1.5s;
-            }
-
-
-            @media screen and (max-width: 1200px) {
-                .section3 {
-                    height: 600px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    color: white;
-                }
-
-                .section3 h2 {
-                    margin-bottom: 0px;
-                }
-
-                .section3 .con {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    text-align: justify;
-
-                    width: 800px;
-
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-                }
-
-                .section3 .content {
-                    padding: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .section3 h3 {
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-
-                .section3 p {
-                    margin-bottom: 40px;
-                    width: 300px;
-                }
-
-                .section3 .skills {
-                    padding: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .skill {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 100%;
-                    margin-bottom: 15px;
-                    max-width: 500px;
-                    text-align: left;
-                    background-color: #2c2c2c;
-                    padding: 15px;
-                    border-radius: 10px;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7),
-                        -3px -3px 10px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic effect */
-                }
-
-
-                .progress-bar {
-                    background-color: #444;
-                    border-radius: 10px;
-                    height: 15px;
-                    width: 50%;
-                    overflow: hidden;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-
-                .progress {
-                    height: 100%;
-                    background-color: #4caf50;
-                    /* Green color for progress */
-                    border-radius: 10px;
-                    transition: width 0.5s ease;
-                }
-
-                .percentage {
-                    font-size: 1rem;
-                    color: #ccc;
-                    display: inline-block;
-                }
-
-                /* From Uiverse.io by vinodjangid07 */
-                .explore {
-                    width: 110px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    gap: 10px;
-                    background-color: rgb(161, 255, 20);
-                    border-radius: 30px;
-                    color: rgb(19, 19, 19);
-                    font-weight: 600;
-                    border: none;
-                    position: relative;
-                    cursor: pointer;
-                    transition-duration: .2s;
-                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
-                    padding-left: 8px;
-                    transition-duration: .5s;
-                }
-
-                .svgIcon {
-                    height: 25px;
-                    transition-duration: 1.5s;
-                }
-
-                .bell path {
-                    fill: rgb(19, 19, 19);
-                }
-
-                .explore:hover {
-                    background-color: rgb(192, 255, 20);
-                    transition-duration: .5s;
-                }
-
-                .explore:active {
-                    transform: scale(0.97);
-                    transition-duration: .2s;
-                }
-
-                .explore:hover .svgIcon {
-                    transform: rotate(250deg);
-                    transition-duration: 1.5s;
-                }
-
-
-            }
-
-            @media screen and (max-width: 760px) {
-                .section3 {
-                    height: 1100px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    color: white;
-                }
-
-                .section3 h2 {
-                    margin-bottom: 0px;
-                    font-size: 21px;
-                }
-
-                .section3 .con {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr;
-                    text-align: justify;
-
-                    width: 93%;
-
-                    border: 2px solid #333;
-                    /* Subtle black border */
-                    border-radius: 15px;
-                    /* Smooth rounded corners */
-                    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-                    /* Black gradient */
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7),
-                        -5px -5px 15px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic shadow effect */
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    /* Smooth hover effect */
-                }
-
-                .section3 .content {
-                    padding: 15px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                 
-                }
-
-                .section3 h3 {
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-
-                .section3 p {
-                    margin-bottom: 40px;
-                    width: 95%;
-                }
-
-                .section3 .skills {
-                    padding: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .skill {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 100%;
-                    margin-bottom: 15px;
-                    max-width: 500px;
-                    text-align: left;
-                    background-color: #2c2c2c;
-                    padding: 15px;
-                    border-radius: 10px;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7),
-                        -3px -3px 10px rgba(50, 50, 50, 0.3);
-                    /* Neomorphic effect */
-                }
-
-
-                .progress-bar {
-                    background-color: #444;
-                    border-radius: 10px;
-                    height: 15px;
-                    width: 50%;
-                    overflow: hidden;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-
-                .progress {
-                    height: 100%;
-                    background-color: #4caf50;
-                    /* Green color for progress */
-                    border-radius: 10px;
-                    transition: width 0.5s ease;
-                }
-
-                .percentage {
-                    font-size: 1rem;
-                    color: #ccc;
-                    display: inline-block;
-                }
-
-                /* From Uiverse.io by vinodjangid07 */
-                .explore {
-                    width: 110px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    gap: 10px;
-                    background-color: rgb(161, 255, 20);
-                    border-radius: 30px;
-                    color: rgb(19, 19, 19);
-                    font-weight: 600;
-                    border: none;
-                    position: relative;
-                    cursor: pointer;
-                    transition-duration: .2s;
-                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
-                    padding-left: 8px;
-                    transition-duration: .5s;
-                }
-
-                .svgIcon {
-                    height: 25px;
-                    transition-duration: 1.5s;
-                }
-
-                .bell path {
-                    fill: rgb(19, 19, 19);
-                }
-
-                .explore:hover {
-                    background-color: rgb(192, 255, 20);
-                    transition-duration: .5s;
-                }
-
-                .explore:active {
-                    transform: scale(0.97);
-                    transition-duration: .2s;
-                }
-
-                .explore:hover .svgIcon {
-                    transform: rotate(250deg);
-                    transition-duration: 1.5s;
-                }
-
-
-            }
-        </style>
-
-        <div id="skills" class="section3">
-            <h2>My Programming Journey & Skills</h2>
-            <div class="con">
-                <div class="content">
-                    <h3>6 Years of Programming Experience</h3>
-                    <p>I have spent the last 6 years honing my
-                        programming skills and working on various
-                        projects that have helped me grow as a
-                        developer.
-                    </p>
-                    <p> From developing websites to
-                        building applications, I've acquired a deep
-                        understanding of various programming
-                        languages and tools.
-                    </p>
-                    <p>I've continuously
-                        improved my abilities through both
-                        professional projects and personal
-                        endeavors, staying updated with the latest
-                        advancements in technology.
-                    </p>
-                    <button class="explore">
-                        <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z">
-                            </path>
-                        </svg>
-                        Explore
-                    </button>
-                </div>
-   
-                <div class="skills">
-                    <h3>Skills</h3>
-
-                    <div class="skill">
-                        <span>PHP</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="percentage">90%</span>
-                    </div>
-
-                    <div class="skill">
-                        <span>Python</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 85%;"></div>
-                        </div>
-                        <span class="percentage">85%</span>
-                    </div>
-
-                    <div class="skill">
-                        <span>HTML & CSS</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="percentage">90%</span>
-                    </div>
-
-                    <div class="skill">
-                        <span>MySQL</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="percentage">90%</span>
-                    </div>
-
-                    <div class="skill">
-                        <span>JavaScript</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="percentage">90%</span>
-                    </div>
-
-                    <div class="skill">
-                        <span>GitHub</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <span class="percentage">90%</span>
-                    </div>
-
-                </div>
-            </div>
-         
-        </div>
-
-        <div class="breaker">
-          
-        </div>
-
-        <style>
-            .section4 {
-                height: 900px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
-
-            .section4 p {
-                text-align: justify;
-                place-items: center;
-            }
-
-            .slide img {
-                width: 70%;
-            }
-
-            .slide h1 {
-                margin: 10px;
-            }
-
-            .carousel {
-                position: relative;
-                width: 100%;
-                overflow: hidden;
-                padding: 9px;
-            }
-
-            .carousel-track-container {
-                overflow: hidden;
-                width: 100%;
-            }
-
-            .carousel-track {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-            }
-
-            .slide {
-                min-width: 100%;
-                text-align: center;
-                                
-            }
-
-            .slide img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            .arrow {
-                
-                
-                transform: translateY(-50%);
-                background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
-                border: 2px solid rgba(255, 255, 255, 0.3); /* Soft border */
-                color: white;
-                font-size: 2rem;
-                cursor: pointer;
-               
-                padding: 15px;
-                border-radius: 50%;
-                transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-            }
-
-            .arrow:hover {
-                background-color: rgba(255, 255, 255, 0.3); /* Brighter background on hover */
-                border-color: rgba(255, 255, 255, 0.6); /* Brighter border on hover */
-                color: black; /* Subtle contrast on hover */
-                transform: translateY(-50%) scale(1.1); /* Slight zoom on hover */
-                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
-            }
-
-
-            .arrow.left {
-                left: 45px;
-            }
-
-            .arrow.right {
-                right: 45px;
-            }
-
-            @media screen and (max-width: 1200px) {
-                .section4 {
-                    height: 700px;
-                }
-
-                .slide img {
-                    width: 100%;
-                }
-            }
-
-            @media screen and (max-width: 768px) {
-                .section4 {
-                    height: 450px;
-                }
-
-                .arrow {
-                    display: none;
-                }
-
-                .slide img {
-                    width: 100%;
-                }
-
-                .slide h1 {
-                    font-size: 20px;
-                    margin: 10px 0px 10px 0px;
-                }
-
-                .arrow.left {
-                    font-size: 24px;
-                }
-
-                .arrow.right {
-                    font-size: 24px;
-                }
-
-                .section4 p {
-                    text-align: justify;
-                    place-items: center;
-                    font-size: 12px;
-                }
-
-                .carousel-track-container {
-                    overflow-x: auto;
-                    scroll-snap-type: x mandatory;
-                    width: 100%;
-                    -webkit-overflow-scrolling: touch;
-                }
-
-                .carousel-track {
-                    scroll-snap-type: x mandatory;
-                }
-
-                .slide {
-                    scroll-snap-align: center;
-                    min-width: 100%;
-                    text-align: center;
-                    margin-right: 30px;
-                }
-                
-            }
-        </style>
-
-        <div class="section4">
-            <button class="arrow left">❮</button>
-            <div class="carousel">
-                <h1 style="text-align: center; margin-bottom: 25px;">My Projects</h1>
-               
-                <div class="carousel-track-container">
-                    <div class="carousel-track">
-                        <div class="slide">
-                            <img src="yes.png" alt="">
-                            <h1>Maranding Boarding House Center</h1>
-                            <p>I developed this website for my thesis, and it is a working system I did
-                                which is a boarding house system, able to make tenants hassle-free of finding
-                                boarding houses around Maranding, making them save more and tirelessly book
-                                or reserve rooms on boarding houses in Maranding.
-                            </p>
-                        </div>
-                        <div class="slide">
-                            <img src="no.png" alt="">
-                            <h1>Discord Bots</h1>
-                            <p>I developed this bots in the mids of covid, and the purpose of this bots
-                                are to moderate the server, and not relying on other big bots available online
-                                just to make servers organized and i can manually fix it other than
-                                using public bots which if offline then we wont be able to do fixes.
-                            </p>
-                        </div>
-                        <div class="slide">
-                            <img src="uh.png" alt="">
-                            <h1>CKCM Grading System</h1>
-                            <p>Me and my team developed this grading system for our school, aiming to streamline the grading process and make it more efficient for both teachers and students.
-                                This system allows teachers to input grades, calculate averages, and generate report cards, all while providing a user-friendly interface for students to view their grades.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="arrow right">❯</button>
-        </div>
-
-        <script>
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const nextButton = document.querySelector('.arrow.right');
-            const prevButton = document.querySelector('.arrow.left');
-            const slideWidth = slides[0].getBoundingClientRect().width;
-
-            // Arrange slides side-by-side
-            slides.forEach((slide, index) => {
-                slide.style.left = `${index * 100}%`;
-            });
-
-            let currentIndex = 0;
-
-            const moveToSlide = (track, currentIndex, targetIndex) => {
-                track.style.transform = `translateX(-${targetIndex * 100}%)`;
-                currentIndex = targetIndex;
-            };
-
-            // Move right
-            nextButton.addEventListener('click', () => {
-                const targetIndex = (currentIndex + 1) % slides.length;
-                moveToSlide(track, currentIndex, targetIndex);
-                currentIndex = targetIndex;
-            });
-
-            // Move left
-            prevButton.addEventListener('click', () => {
-                const targetIndex =
-                    (currentIndex - 1 + slides.length) % slides.length;
-                moveToSlide(track, currentIndex, targetIndex);
-                currentIndex = targetIndex;
-            });
-
-        </script>
-
-        <div class="breaker">
-            
-        </div>
-
-        <style>
-            .section5 {
-                height: 900px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                align-items: center;
-                color: white;
-            }
-
-            .form-container {
-                height: 500px;
-                width: 500px;
-                background: linear-gradient(#212121, #212121) padding-box,
-                    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-                border: 2px solid transparent;
-                padding: 32px 24px;
-                font-size: 14px;
-                font-family: inherit;
-                color: white;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 20px;
-                box-sizing: border-box;
-                border-radius: 16px;
-                background-size: 200% 100%;
-                animation: gradient 5s ease infinite;
-            }
-
-            @keyframes gradient {
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                50% {
-                    background-position: 100% 50%;
-                }
-
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-
-            .form-container button:active {
-                scale: 0.95;
-            }
-
-            .form-container .form {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .form-container .form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-            }
-
-            .form-container .form-group label {
-                display: block;
-                margin-bottom: 5px;
-                color: #717171;
-                font-weight: 600;
-                font-size: 12px;
-            }
-
-            .form-container .form-group input {
-                width: auto;
-                padding: 12px 16px;
-                border-radius: 8px;
-                color: #fff;
-                font-family: inherit;
-                background-color: transparent;
-                border: 1px solid #414141;
-            }
-
-            .form-container .form-group textarea {
-                width: auto;
-                padding: 12px 16px;
-                border-radius: 8px;
-                resize: none;
-                color: #fff;
-                height: 96px;
-                border: 1px solid #414141;
-                background-color: transparent;
-                font-family: inherit;
-            }
-
-            .form-container .form-group input::placeholder {
-                opacity: 0.5;
-            }
-
-            .form-container .form-group input:focus {
-                outline: none;
-                border-color: #e81cff;
-            }
-
-            .form-container .form-group textarea:focus {
-                outline: none;
-                border-color: #e81cff;
-            }
-
-            .form-container .form-submit-btn {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                align-self: flex-start;
-                font-family: inherit;
-                color: #717171;
-                font-weight: 600;
-                width: 40%;
-                background: #313131;
-                border: 1px solid #414141;
-                padding: 12px 16px;
-                font-size: inherit;
-                gap: 8px;
-                margin-top: 8px;
-                cursor: pointer;
-                border-radius: 6px;
-            }
-
-            .form-container .form-submit-btn:hover {
-                background-color: #fff;
-                border-color: #fff;
-            }
-
-
-            @media screen and (max-width: 1200px) {
-                .section5 {
-                    height: 600px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    color: white;
-                }
-
-            }
-
-            @media screen and (max-width: 760px) {
-                .section5 {
-                    height: 600px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    color: white;
-                }
-
-                .form-container {
-                    height: 500px;
-                    width: 300px;
-                    background: linear-gradient(#212121, #212121) padding-box,
-                        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-                    border: 2px solid transparent;
-                    padding: 32px 24px;
-                    font-size: 14px;
-                    font-family: inherit;
-                    color: white;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: 20px;
-                    box-sizing: border-box;
-                    border-radius: 16px;
-                    background-size: 200% 100%;
-                    animation: gradient 5s ease infinite;
-                }
-
-            }
-        </style>
-
-        <div id="contact" class="section5">
-            <h1>Contact Me</h1>
-            <div class="form-container">
-                <form class="form">
-                    <div class="form-group">
-                        <label for="email">Company Email</label>
-                        <input required="" name="email" id="email" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="textarea">How Can I Help You?</label>
-                        <textarea required="" cols="50" rows="10" id="textarea" name="textarea">          </textarea>
-                    </div>
-                    <button type="submit" class="form-submit-btn">Submit</button>
-                </form>
-            </div>
-        </div>
-
-        <style>
-            /* Footer */
-            .footer {
-                background-color: #111;
-                color: white;
-                padding: 40px 20px;
-                font-family: 'Arial', sans-serif;
-            }
-
-            .footer-container {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                max-width: 1200px;
-                margin: 0 auto;
-                gap: 20px;
-            }
-
-            .footer-about,
-            .footer-links {
-                flex: 1 1 300px;
-                min-width: 250px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                text-align: left;
-                height: 100%;
-            }
-
-            .footer-socials {
-                flex: 1 1 300px;
-                min-width: 250px;
-                border-top: 1px solid #444;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
-
-            .footer h2 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-                border-bottom: 2px solid white;
-                display: inline-block;
-                padding-bottom: 5px;
-            }
-
-            .footer p {
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
-
-            .footer-links ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            .footer-links li {
-                margin: 10px 0;
-            }
-
-            .footer-links a {
-                text-decoration: none;
-                color: white;
-                transition: color 0.3s ease;
-            }
-
-            .footer-links a:hover {
-                color: #f39c12;
-                /* Accent color */
-            }
-
-            .social-icons {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .social-icon {
-                font-size: 1.5rem;
-                color: white;
-                text-decoration: none;
-                transition: transform 0.3s ease, color 0.3s ease;
-            }
-
-            .social-icon:hover {
-                color: #f39c12;
-                transform: scale(1.2);
-            }
-
-            /* Footer Bottom */
-            .footer-bottom {
-                text-align: center;
-                margin-top: 20px;
-                border-top: 1px solid #444;
-                padding-top: 15px;
-                font-size: 0.8rem;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .footer-container {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .footer-about,
-                .footer-links,
-                .footer-socials {
-                    flex: 1 1 100%;
-                    min-width: 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    height: auto;
-                }
-
-                .footer-about p {
-                    width: 100% !important;
-                    max-width: 300px;
-                    margin: 0 auto;
-                }
-            }
-        </style>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- About Section -->
-                <div class="footer-about">
-                    <h2>About Me</h2>
-                    <p style="text-align: justify; width: 400px;">A passionate developer with a love for creating efficient and impactful systems. Constantly
-                        learning and growing in the evolving world of technology.</p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h2>Quick Links</h2>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social Media -->
-                <div class="footer-socials">
-                    <h2 style="margin-top: 15px;">Follow Me</h2>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon">🌐</a>
-                        <a href="#" class="social-icon">🐦</a>
-                        <a href="#" class="social-icon">📘</a>
-                        <a href="#" class="social-icon">📸</a>
-                    </div>
-                </div>
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2024 Dodge | All Rights Reserved.</p>
-            </div>
-        </footer>
+            <h3 class="h3">Education (will be updated soon)</h3>
+          </div>
 
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Christ the King College de Maranding, Inc.</h4>
+
+              <span>2024 — 2025</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti,
+                quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Lala National High School</h4>
+
+              <span>2006 — 2007</span>
+
+              <p class="timeline-text">
+                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas
+                assumenda
+                est
+                omnis..
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Maranding Central Elementary School</h4>
+
+              <span>2002 — 2004</span>
+
+              <p class="timeline-text">
+                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit,
+                sed
+                consequuntur
+                magni dolores
+                eos.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Serviamus Website Development</h4>
+
+              <span>2025 — Present</span>
+
+              <p class="timeline-text">
+                Designing and developing modern websites for Serviamus Foundation, focusing on enhancing user
+                experience, optimizing performance, and implementing responsive design solutions.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Grading System Development</h4>
+
+              <span>2024 — 2025</span>
+
+              <p class="timeline-text">
+                Developed and implemented a comprehensive grading system for Christ the King College de Maranding, Inc.
+                (CKCM), streamlining grade management processes and enhancing academic record keeping efficiency
+                for faculty and administrators.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Discord Bot Development designer</h4>
+
+              <span>2022 — 2023</span>
+
+              <p class="timeline-text">
+                Specialized in creating custom Discord bots with features like moderation, music, games, and server
+                management.
+                Developed automated solutions that enhance community engagement and streamline server operations through
+                advanced bot functionality.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">PHP Language</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Mysql Database</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">JavaScript Language</h5>
+                <data value="70%">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Python Language</h5>
+                <data value="60%">60%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Github Management</h5>
+                <data value="70%">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web Deployment</h5>
+                <data value="70%">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/my-projects/ckcm-project.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Christ the King Grading System</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/my-projects/serviamus-project.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Serviamus Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/my-projects/thesis-project.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Thesis Website</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/my-projects/bot-project.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Discord Bots</h3>
+
+                <p class="project-category">Bot development</p>
+
+              </a>
+            </li>
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CERTIFICATES
+      -->
+
+      <article class="blog" data-page="certificates">
+
+        <header>
+          <h2 class="h2 article-title">Certificates</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <div class="certificate-item" onclick="openCertificateModal('ibpap-psia')">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/my-certificates/Ibpap-psia.png" alt="IBPAP-PSIA Certificate" loading="lazy"
+                    draggable="false" oncontextmenu="return false;" ondragstart="return false;"
+                    onselectstart="return false;" onmousedown="return false;">
+                  <div class="certificate-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Tour de Tech</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">November 14, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">IBPAP-PSIA Certificate</h3>
+
+                  <p class="blog-text">
+                    Professional certification in Information Technology and Business Process Association.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="blog-post-item">
+              <div class="certificate-item" onclick="openCertificateModal('nc-certificate')">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/my-certificates/nc.png" alt="NC Certificate" loading="lazy"
+                    draggable="false" oncontextmenu="return false;" ondragstart="return false;"
+                    onselectstart="return false;" onmousedown="return false;">
+                  <div class="certificate-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">National Certification</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024-01-01">May 18, 2025</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">NC Certificate</h3>
+
+                  <p class="blog-text">
+                    National Certificate demonstrating professional competency and technical skills.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!-- Certificate Modal -->
+        <div id="certificate-modal" class="certificate-modal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeCertificateModal()">&times;</span>
+            <img id="modal-certificate-image" src="" alt="Certificate" draggable="false" oncontextmenu="return false;"
+              ondragstart="return false;" onselectstart="return false;" onmousedown="return false;">
+          </div>
+        </div>
+
+      </article>
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7903.469959512341!2d123.77200409468392!3d7.922726144860317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x325435203fb552b7%3A0x4b2f15acf68e279a!2sMaranding%2C%20Lala%2C%20Lanao%20del%20Norte!5e0!3m2!1sen!2sph!4v1756708807320!5m2!1sen!2sph"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
 
     </div>
 
+  </main>
 
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/certificates.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
