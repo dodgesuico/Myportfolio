@@ -805,81 +805,113 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <div class="portfolio-item" onclick="openPortfolioModal('ckcm-project')">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/my-projects/ckcm-project.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/my-projects/ckcm-project.png" alt="Christ the King Grading System"
+                    loading="lazy" draggable="false">
                 </figure>
 
                 <h3 class="project-title">Christ the King Grading System</h3>
 
                 <p class="project-category">Web development</p>
 
-              </a>
+              </div>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <div class="portfolio-item" onclick="openPortfolioModal('serviamus-project')">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/my-projects/serviamus-project.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/my-projects/serviamus-project.png" alt="Serviamus Website" loading="lazy"
+                    draggable="false">
                 </figure>
 
                 <h3 class="project-title">Serviamus Website</h3>
 
                 <p class="project-category">Web development</p>
 
-              </a>
+              </div>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <div class="portfolio-item" onclick="openPortfolioModal('thesis-project')">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/my-projects/thesis-project.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/my-projects/thesis-project.png" alt="Thesis Website" loading="lazy"
+                    draggable="false">
                 </figure>
 
                 <h3 class="project-title">Thesis Website</h3>
 
                 <p class="project-category">Web development</p>
 
-              </a>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <div class="portfolio-item" onclick="openPortfolioModal('bot-project')">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/my-projects/bot-project.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/my-projects/bot-project.png" alt="Discord Bots" loading="lazy"
+                    draggable="false">
                 </figure>
 
                 <h3 class="project-title">Discord Bots</h3>
 
                 <p class="project-category">Bot development</p>
 
-              </a>
+              </div>
             </li>
 
 
           </ul>
 
         </section>
+
+        <!-- Portfolio Modal -->
+        <div id="portfolio-modal" class="portfolio-modal">
+          <div class="modal-content portfolio-modal-content">
+            <span class="close-btn" onclick="closePortfolioModal()">&times;</span>
+            <div class="portfolio-modal-body">
+              <div class="portfolio-image-section">
+                <img id="modal-portfolio-image" src="" alt="Project" draggable="false" oncontextmenu="return false;"
+                  ondragstart="return false;" onselectstart="return false;" onmousedown="return false;">
+              </div>
+              <div class="portfolio-details-section">
+                <h2 style="color: white;" id="modal-portfolio-title" class="portfolio-modal-title"></h2>
+                <p id="modal-portfolio-category" class="portfolio-modal-category"></p>
+                <p id="modal-portfolio-description" class="portfolio-modal-description"></p>
+
+                <div class="portfolio-technologies">
+                  <h4 style="color: white;">Technologies Used:</h4>
+                  <div id="modal-portfolio-technologies" class="tech-tags"></div>
+                </div>
+
+                <div class="portfolio-features">
+                  <h4 style="color: white;">Key Features:</h4>
+                  <ul id="modal-portfolio-features" class="features-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </article>
 
@@ -1044,6 +1076,7 @@
   -->
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/certificates.js"></script>
+  <script src="./assets/js/portfolio.js"></script>
 
   <!--
     - ionicon link
