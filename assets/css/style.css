@@ -1116,6 +1116,8 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
+  /* Shows the left side of the image */
   transition: var(--transition-1);
 }
 
