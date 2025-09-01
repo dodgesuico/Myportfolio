@@ -26,21 +26,21 @@ const portfolioDetails = {
         title: 'Serviamus Website',
         category: 'Web Development',
         description: 'Modern website development for Serviamus Foundation, focusing on enhancing user experience, optimizing performance, and implementing responsive design solutions.',
-        technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+        technologies: ['HTML5', 'JavaScript', 'Tailwind CSS', 'PHP'],
         features: ['Responsive Design', 'Modern UI/UX', 'Performance Optimized', 'Cross-browser Compatible']
     },
     'thesis-project': {
         title: 'Thesis Website',
         category: 'Web Development',
-        description: 'Academic thesis project website showcasing research and development in web technologies and modern design principles.',
-        technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+        description: 'Academic thesis project website showcasing research and development in web technologies and with junior level design principles.',
+        technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'MySQL'],
         features: ['Academic Research', 'Modern Design', 'Interactive Elements', 'Documentation']
     },
     'bot-project': {
         title: 'Discord Bots',
         category: 'Bot Development',
         description: 'Custom Discord bots with features like moderation, music, games, and server management. Developed automated solutions that enhance community engagement and streamline server operations.',
-        technologies: ['Python', 'Discord.py', 'APIs', 'Database'],
+        technologies: ['Python', 'Discord.py', 'APIs', 'Cloud Integrations'],
         features: ['Moderation Tools', 'Music Bot', 'Games & Fun', 'Server Management']
     }
 };
